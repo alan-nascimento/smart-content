@@ -1,8 +1,14 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Profile from './Profile/Profile'
 
 const Layout = ({ children }) => {
-  return <main>{children}</main>
+  return (
+    <>
+      <Profile></Profile>
+      <main>{children}</main>
+    </>
+  )
 }
 
 Layout.propTypes = {
