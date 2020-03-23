@@ -6,6 +6,8 @@ module.exports = {
     author: `Alan Nascimento`,
   },
   plugins: [
+    'gatsby-plugin-antd',
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
