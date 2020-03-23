@@ -1,10 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { Profile } from '../../components/molecules'
 import { Layout } from './Default.styles'
 
 const DefaultTemplate = ({ children }) => {
-  return <Layout>{children}</Layout>
+  return (
+    <Layout>
+      <Profile />
+      {children}
+    </Layout>
+  )
 }
 
 DefaultTemplate.propTypes = {
