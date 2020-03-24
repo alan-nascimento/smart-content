@@ -3,6 +3,14 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import { Avatar } from '../../atoms'
 
+import {
+  Container,
+  Link,
+  Position,
+  Author,
+  Description,
+} from './Profile.styles'
+
 const Profile = () => {
   const {
     site: {
@@ -29,12 +37,16 @@ const Profile = () => {
   `)
 
   return (
-    <>
-      <Avatar fixed={avatarImage.childImageSharp.fixed} />
-      <h1>{title}</h1>
-      <h2>{position}</h2>
-      <p>{description}</p>
-    </>
+    <Container>
+      <Link>
+        <Avatar fixed={avatarImage.childImageSharp.fixed} />
+        <Author>
+          {title}
+          <Position>{position}</Position>
+        </Author>
+      </Link>
+      <Description>{description}</Description>
+    </Container>
   )
 }
 
