@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Profile } from '../../components/molecules'
+import { Menubar } from '../../components/molecules'
+import { Sidebar } from '../../components/organisms'
+
 import { Layout } from './Default.styles'
 
 const DefaultTemplate = ({ children }) => {
   return (
     <Layout>
-      <Profile />
+      <Sidebar />
       {children}
+      <Menubar />
     </Layout>
   )
 }
