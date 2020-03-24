@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import SEO from '../components/seo'
+import { Menubar } from '../components/molecules'
 import { Sidebar } from '../components/organisms'
 import GlobalStyles from '../styles/global'
 
@@ -17,6 +18,7 @@ const IndexPage = () => (
         <Link to="/about">About</Link>
       </li>
     </ul>
+    <Menubar />
   </DefaultTemplate>
 )
 
