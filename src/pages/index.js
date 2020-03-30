@@ -1,33 +1,58 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import SEO from '../components/seo'
-import { PostItem } from '../components/molecules'
 import GlobalStyles from '../styles/global'
 
+import { PostItem } from '../components/molecules'
 import { DefaultTemplate } from '../templates'
 
-const IndexPage = () => (
-  <DefaultTemplate>
-    <GlobalStyles />
-    <SEO title="Home" />
-    <PostItem
-      slug="/about/"
-      category="Misc"
-      date="30 de Julho de 2019"
-      timeToRead="5"
-      title="Diga não ao Medium: tenha sua própria plataforma"
-      description="Algumas razões para você ter sua própria plataforma ao invés de soluções como o Medium."
-    />
+const IndexPage = () => {
+  const { allMarkdownRemark } = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              background
+              category
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              description
+              title
+            }
+            timeToRead
+          }
+        }
+      }
+    }
+  `)
 
-    <PostItem
-      slug="/about/"
-      category="Misc"
-      date="30 de Julho de 2019"
-      timeToRead="5"
-      title="Diga não ao Medium: tenha sua própria plataforma"
-      description="Algumas razões para você ter sua própria plataforma ao invés de soluções como o Medium."
-    />
-  </DefaultTemplate>
-)
+  const postList = allMarkdownRemark.edges
+
+  return (
+    <DefaultTemplate>
+      <GlobalStyles />
+      <SEO title="Home" />
+      {postList.map(
+        ({
+          node: {
+            frontmatter: { background, category, date, description, title },
+            timeToRead,
+          },
+        }) => (
+          <PostItem
+            slug="/about/"
+            background={background}
+            category={category}
+            date={date}
+            timeToRead={timeToRead}
+            title={title}
+            description={description}
+          />
+        )
+      )}
+    </DefaultTemplate>
+  )
+}
 
 export default IndexPage

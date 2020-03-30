@@ -13,11 +13,11 @@ import {
 
 const PostItem = ({
   slug,
-  background,
-  category,
   date,
-  timeToRead,
   title,
+  category,
+  background,
+  timeToRead,
   description,
 }) => (
   <Link to={slug}>
@@ -36,11 +36,11 @@ const PostItem = ({
 
 PostItem.propTypes = {
   slug: PropTypes.string.isRequired,
-  background: PropTypes.string,
-  category: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  timeToRead: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  background: PropTypes.string.isRequired,
+  timeToRead: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
 }
 
