@@ -4,6 +4,11 @@ import { Layout as LayoutBase } from 'antd'
 export const Layout = styled(LayoutBase)`
   && {
     display: flex;
-    background: gold;
   }
+`
+export const Main = styled.main`
+  background: #16202c;
+  min-height: 100vh;
+  padding: 0 3.75rem 0 20rem;
+  width: 100%;
 `
