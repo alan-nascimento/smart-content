@@ -28,23 +28,23 @@ const BlogList = props => {
         }) => (
           <PostItem
             slug={slug}
-            background={background}
-            category={category}
             date={date}
-            timeToRead={timeToRead}
             title={title}
+            category={category}
+            timeToRead={timeToRead}
+            background={background}
             description={description}
           />
         )
       )}
 
       <Pagination
-        isFirst={isFirst}
         isLast={isLast}
-        currentPage={currentPage}
+        isFirst={isFirst}
         numPages={numPages}
         prevPage={prevPage}
         nextPage={nextPage}
+        currentPage={currentPage}
       />
     </DefaultTemplate>
   )
