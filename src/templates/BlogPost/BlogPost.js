@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import SEO from '../../components/seo'
 import { DefaultTemplate } from '../'
+import { Comments, RecommendedPosts } from '../../components/molecules'
 
 import {
   PostHeader,
@@ -12,8 +13,10 @@ import {
   MainContent,
 } from './BlogPost.styles'
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pageContext }) => {
   const post = data.markdownRemark
+  const next = pageContext.nextPost
+  const previous = pageContext.previousPost
 
   return (
     <DefaultTemplate>
@@ -28,6 +31,8 @@ const BlogPost = ({ data }) => {
       <MainContent>
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </MainContent>
+      <RecommendedPosts next={next} previous={previous} />
+      <Comments url={post.fields.slug} title={post.frontmatter.title} />
     </DefaultTemplate>
   )
 }
@@ -35,6 +40,9 @@ const BlogPost = ({ data }) => {
 export const query = graphql`
   query Post($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      fields {
+        slug
+      }
       frontmatter {
         title
         description
