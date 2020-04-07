@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import SEO from '../../components/seo'
-import { PostItem } from '../../components/molecules'
+import { PostItem, PostList } from '../../components/molecules'
 import { Pagination } from '../../components/atoms'
 import { DefaultTemplate } from '../'
 
@@ -18,25 +18,27 @@ const BlogList = props => {
   return (
     <DefaultTemplate>
       <SEO title="Home" />
-      {postList.map(
-        ({
-          node: {
-            frontmatter: { background, category, date, description, title },
-            timeToRead,
-            fields: { slug },
-          },
-        }) => (
-          <PostItem
-            slug={slug}
-            date={date}
-            title={title}
-            category={category}
-            timeToRead={timeToRead}
-            background={background}
-            description={description}
-          />
-        )
-      )}
+      <PostList>
+        {postList.map(
+          ({
+            node: {
+              frontmatter: { background, category, date, description, title },
+              timeToRead,
+              fields: { slug },
+            },
+          }) => (
+            <PostItem
+              slug={slug}
+              date={date}
+              title={title}
+              category={category}
+              timeToRead={timeToRead}
+              background={background}
+              description={description}
+            />
+          )
+        )}
+      </PostList>
 
       <Pagination
         isLast={isLast}
