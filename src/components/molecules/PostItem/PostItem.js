@@ -20,7 +20,7 @@ const PostItem = ({
   timeToRead,
   description,
 }) => (
-  <Link to={slug}>
+  <Link to={slug} cover direction="right" bg="#16202c" duration={0.6}>
     <Container>
       <Tag background={background}>Misc</Tag>
       <Info>

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import { Link as LinkBase } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-export const Link = styled(LinkBase)`
+export const Link = styled(AniLink)`
   color: var(--texts);
   display: flex;
   text-decoration: none;

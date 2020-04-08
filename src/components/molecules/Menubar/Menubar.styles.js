@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import { Link as LinkBase } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 export const Container = styled.aside`
   align-items: center;
@@ -36,7 +36,7 @@ export const Group = styled.div`
   `}
 `
 
-export const Link = styled(LinkBase)`
+export const Link = styled(AniLink)`
   display: block;
 
   &.active {

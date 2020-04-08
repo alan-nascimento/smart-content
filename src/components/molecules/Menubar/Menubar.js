@@ -27,14 +27,16 @@ const MenuBar = () => {
   return (
     <Container>
       <Group>
-        <Link to="/" title="Voltar para Home">
+        <Link
+          to="/"
+          cover
+          direction="right"
+          bg="#16202c"
+          duration={0.6}
+          title="Voltar para Home"
+        >
           <Item>
             <Home />
-          </Item>
-        </Link>
-        <Link to="/search/" title="Pesquisar">
-          <Item>
-            <Search />
           </Item>
         </Link>
       </Group>

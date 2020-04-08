@@ -8,7 +8,14 @@ const Menu = () => (
     <List>
       {menuItems.map(item => (
         <Item key={item.key}>
-          <Link to={item.url} activeClassName="active">
+          <Link
+            cover
+            direction="left"
+            bg="#16202c"
+            duration={0.6}
+            to={link.url}
+            activeClassName="active"
+          >
             {item.label}
           </Link>
         </Item>

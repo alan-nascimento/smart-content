@@ -38,7 +38,7 @@ const Profile = () => {
 
   return (
     <Container>
-      <Link>
+      <Link to="/" cover direction="left" bg="#16202c" duration={0.6}>
         <Avatar fixed={avatarImage.childImageSharp.fixed} />
         <Author>
           {title}
