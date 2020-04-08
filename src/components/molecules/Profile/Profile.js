@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import { Avatar } from '../../atoms'
+import getThemeColor from '../../../utils/getThemeColor'
 
 import {
   Container,
@@ -38,7 +39,7 @@ const Profile = () => {
 
   return (
     <Container>
-      <Link to="/" cover direction="left" bg="#16202c" duration={0.6}>
+      <Link to="/" cover direction="left" bg={getThemeColor()} duration={0.6}>
         <Avatar fixed={avatarImage.childImageSharp.fixed} />
         <Author>
           {title}

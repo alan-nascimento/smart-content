@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import getThemeColor from '../../../utils/getThemeColor'
+
 import {
   Container,
   Link,
@@ -20,7 +22,7 @@ const PostItem = ({
   timeToRead,
   description,
 }) => (
-  <Link to={slug} cover direction="right" bg="#16202c" duration={0.6}>
+  <Link to={slug} cover direction="right" bg={getThemeColor()} duration={0.6}>
     <Container>
       <Tag background={background}>Misc</Tag>
       <Info>

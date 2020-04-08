@@ -1,5 +1,7 @@
 import React from 'react'
 
+import getThemeColor from '../../../utils/getThemeColor'
+
 import menuItems from './Menu.links'
 import { Container, List, Item, Link } from './Menu.styles'
 
@@ -11,9 +13,9 @@ const Menu = () => (
           <Link
             cover
             direction="left"
-            bg="#16202c"
+            bg={getThemeColor()}
             duration={0.6}
-            to={link.url}
+            to={item.url}
             activeClassName="active"
           >
             {item.label}

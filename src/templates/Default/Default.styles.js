@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 import { Layout as LayoutBase } from 'antd'
 
 export const Layout = styled(LayoutBase)`
