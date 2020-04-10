@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import { Layout as LayoutBase } from 'antd'
 
-export const Layout = styled(LayoutBase)`
-  && {
-    display: flex;
-  }
+export const Layout = styled.section`
+  display: flex;
+
+  ${media.lessThan('large')`
+    flex-direction: column;
+  `}
 `
+
 export const Main = styled.main`
   background: var(--background);
   min-height: 100vh;
