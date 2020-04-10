@@ -4,7 +4,7 @@ module.exports = {
     position: `Frontend Developer`,
     description: `A blog about frontend development and other cool stuff.`,
     author: `Alan Nascimento`,
-    siteUrl: `https://alan-nascimento.com.br`,
+    siteUrl: `smart-content.netlify.com`,
   },
   plugins: [
     `gatsby-plugin-transition-link`,
@@ -59,8 +59,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Alan Nascimento`,
-        short_name: `Alan Nascimento`,
+        name: `Smart Content Blog`,
+        short_name: `Smart Content Blog`,
         start_url: `/`,
         background_color: `#16202c`,
         theme_color: `#16202c`,
@@ -72,5 +72,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify-cms`,
   ],
 }
